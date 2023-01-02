@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Session 2 - Namaste React Live",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "parcel index.html"
   },
   "author": "Tania Mollah",
   "license": "ISC",
