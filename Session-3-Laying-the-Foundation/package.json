@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
-    "build": "build parcel index.html"
+    "build": "parcel build index.html"
   },
   "author": "Tania Mollah",
   "license": "ISC",
