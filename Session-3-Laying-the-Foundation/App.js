@@ -1,52 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+import casperLogo from "./asset/image/Casper.png";
+
 console.log("APP JS");
 
-/***
- *
- * HMR - Hot Module Reaload
- *
- *
- */
+const logo = <img className="logo-style" src={casperLogo} />
+const searchBar = <form className="form-inline my-2 my-lg-0">
+<input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+<button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
 
-const element = React.createElement(
-  "div",
-  { style: { color: "red" }, key: "h1" },
-  "I am Div 1"
-);
-const element1 = React.createElement(
-  "div",
-  { id: "element1", style: { color: "blue" }, key: "h2" },
-  "I am Div 2"
-);
-const container = React.createElement("div", {}, [element, element1]);
+const HeaderComponent = () => {
+  return (
+    <div>
+      {logo}
+      {searchBar}
+    </div>
+  )
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(container);
-/** 
-    ** Below is plain JS
-    const element = document.createElement('h1');
-    element.textContent="I am vanilla JavaScript :D";
-    const root = document.getElementById('root');
-    root.appendChild(element) */
-/* let obj = {
-    fname: "Tania",
-    lname: "Mollah",
-    m: function () {
-      console.log("1 ", this);
-      function foo() {
-        console.log("2 ", this);
-      }
-      foo();
-    },
-    n: () => {
-      console.log("3 ", this);
-      let foo = () => {
-        console.log("4 ", this);
-      };
-      foo();
-    },
-  };
-  obj.m();
-  obj.n();
-  */
+root.render(<HeaderComponent />);
+
