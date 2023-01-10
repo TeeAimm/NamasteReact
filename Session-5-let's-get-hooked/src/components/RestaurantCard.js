@@ -12,7 +12,7 @@ const RestaurantCard = ({
       <img src={IMG_CDN_URL + cloudinaryImageId} />
       <h2>{name}</h2>
       <h3><i>{cuisines?.join(", ")}</i></h3>
-      <h4>{lastMileTravelString} minutes</h4>
+      <h4>{lastMileTravelString} from your place</h4>
     </div>
   );
 };
