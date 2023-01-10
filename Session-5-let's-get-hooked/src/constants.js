@@ -7,7 +7,7 @@ export const Restaurant_Data = [
     data: {
       type: "F",
       id: "439223",
-      name: "KARIM'S- Original from Jama Masjid Delhi- 6",
+      name: "KARIM'S",
       uuid: "f6bf81b0-c31e-4283-94bd-888801fca5bd",
       city: "7",
       area: "Salt Lake",

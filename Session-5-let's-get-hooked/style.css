@@ -1,11 +1,17 @@
+#root{
+    background: #fbfbd6;
+}
 .header{
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    background: #77b141;
+    align-items: center;
 }
 .nav-items > ul  {
     list-style-type: none;
     display: flex;
+    color: white;
 }
 
 .nav-items >ul>li{
@@ -14,16 +20,27 @@
 
 .logo{
     width: 70px;
+    border: 5px solid #77b141;
+    border-bottom: 0;
 }
 .restaurant-list{
-    border: 1px solid black;
-    width: 12rem;
+    border: 2px solid #77b141;
+    width: 15.7rem;
     margin: 5px;
+    background: white;
 }
 .restaurant-list > img {
     width: 100%;
 }
-.restaurant-list{
+.restaurant-list-container{
     display: flex;
     flex-wrap: wrap;
+}
+.search-btn{
+    margin: 0 5px;
+}
+.search-container{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
 }

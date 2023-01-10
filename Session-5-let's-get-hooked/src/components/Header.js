@@ -14,9 +14,10 @@ const Header = () => {
       <Title />
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>HOME</li>
+          <li>ABOUT</li>
+          <li>CONTACT</li>
+          <li>CART</li>
         </ul>
       </div>
     </div>
