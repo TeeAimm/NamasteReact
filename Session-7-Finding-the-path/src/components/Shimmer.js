@@ -1,5 +1,7 @@
 const Shimmer = () => {
-    return <h1>Shimmer UI Loading........</h1>
+    return <div className="restaurant-list-container">
+        {Array(10).fill("").map((e,i)=><div className="shimmer-card" key={i}></div>)}
+    </div>
 }
 
 export default Shimmer;

@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Title = () => (
   <a href="/">
     <img
       className="logo"
       alt="Food-Dom logo"
-      src="https://www.clipartmax.com/png/middle/112-1129793_healthy-food-logo-png.png"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbp0OxXzrRkjDtK3Ge6X6goSmhJL1MoDmXKg&usqp=CAU"
     />
   </a>
 );
@@ -17,13 +18,29 @@ export const Header = () => {
       <Title />
       <div className="nav-items">
         <ul>
-          <li>HOME</li>
-          <li>ABOUT</li>
-          <li>CONTACT</li>
-          <li>CART</li>
+          <li>
+            <Link to="/">
+              HOME
+            </Link>
+          </li>
+          <li>
+            <Link to="about">
+              ABOUT
+            </Link>
+          </li>
+          <li>
+            <Link to="contact">
+              CONTACT
+            </Link>
+          </li>
+          <li>
+            <Link to="cart">
+              CART
+            </Link>
+          </li>
         </ul>
       </div>
-      {isLoggedIn ? <button onClick={()=>{setIsLoggedIn(false)}}>Log Out</button> : <button onClick={()=>{setIsLoggedIn(true)}}>Log In</button>}
+      {isLoggedIn ? <button onClick={() => { setIsLoggedIn(false) }}>Log Out</button> : <button onClick={() => { setIsLoggedIn(true) }}>Log In</button>}
     </div>
   );
 };

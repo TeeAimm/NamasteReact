@@ -1,46 +1,96 @@
-#root{
-    background: #fbfbd6;
+#root {
+  background: #fbfbd6;
 }
-.header{
-    display: flex;
-    justify-content: space-between;
-    /* border: 1px solid black; */
-    background: #77b141;
-    align-items: center;
+.header {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid black; */
+  background: #77b141;
+  align-items: center;
 }
-.nav-items > ul  {
-    list-style-type: none;
-    display: flex;
-    color: white;
-}
-
-.nav-items >ul>li{
-    margin: 10px;   
+.nav-items > ul {
+  list-style-type: none;
+  display: flex;
+  color: white;
 }
 
-.logo{
-    width: 70px;
-    border: 5px solid #77b141;
-    border-bottom: 0;
+.nav-items > ul > li {
+  margin: 10px;
 }
-.restaurant-list{
-    border: 2px solid #77b141;
-    width: 15.7rem;
-    margin: 5px;
-    background: white;
+
+.logo {
+  width: 101px;
+  border: 5px solid #77b141;
+  border-bottom: 0;
+}
+.restaurant-list {
+  border: 2px solid #77b141;
+  width: 15.7rem;
+  background: white;
 }
 .restaurant-list > img {
-    width: 100%;
+  width: 100%;
 }
-.restaurant-list-container{
-    display: flex;
-    flex-wrap: wrap;
+.restaurant-list-container {
+  display: flex;
+  flex-wrap: wrap;
 }
-.search-btn{
-    margin: 0 5px;
+.restaurant-list-container > a{
+  text-decoration: none;
+  color: black;
+  margin: 5px;
 }
-.search-container{
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0;
+.search-btn {
+  margin: 0 5px;
+}
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.shimmer-card {
+  background-color: rgb(175, 171, 171);
+  margin-top: 21px;
+  width: 13rem;
+  height: 14rem;
+  margin: 7px;
+}
+.menu-item > .img >img {
+  width: 118px;
+  /* height: 96px; */
+}
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  width: 648px;
+  padding: 20px 50px;
+  margin: left;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;  
+  border-bottom: 1px solid #b1a0a0;
+}
+.menu-item > div> .description{
+  color: #7c7777;
+}
+.menu-item > div> .price::before{
+  content: "\20B9";
+}
+.menu-item > div> h3{
+  margin: 0;
+}
+.restaurant-menu > img {
+  height: 165px;
+  width: 254px;
+}
+.restaurant-menu > div {
+  color: white;
+  margin-left: 40px;
+}
+.restaurant-menu {
+  background-color: #171a29;
+  display: flex;
+  padding: 40px 81px;
+  margin: 20px 0;
+  align-items: center;
 }
