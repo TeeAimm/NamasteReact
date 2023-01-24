@@ -9,13 +9,13 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Profile from "./components/ProfileClass";
 
 console.log("___FOOD-DOM APP___");
 
 const AppLayout = () => (
   <>
     <MainHeader.Header />
-    {/*   <MyBody /> */}
     <Outlet />
     <MyFooter />
   </>
@@ -32,7 +32,13 @@ const appRoute = createBrowserRouter([
       },
       {
         path: 'about',
-        element: <About />
+        element: <About />,
+        children: [
+          {
+            path: "profile",
+            element: <Profile />
+          }
+        ]
       },
       {
         path: 'contact',
