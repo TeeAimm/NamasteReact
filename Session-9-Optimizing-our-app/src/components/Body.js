@@ -4,7 +4,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import {filterData} from "../utils/helper"
 import useAllRestaurant from "../utils/useAllRestaurant";
-import { GET_ALL_RESTAURANT_URL } from "../constants";
+import { FETCH_URL } from "../constants";
 import useOnline from "../utils/useOnline";
 
 
@@ -19,7 +19,7 @@ const Body = () => {
     }, [])
     console.log("render ")
     async function getAllRestaurants() {
-        const data = await fetch(GET_ALL_RESTAURANT_URL);
+        const data = await fetch(FETCH_URL.GET_ALL_RESTAURANT);
         const json = await data.json();
         const restaurantList = json?.data?.cards[2]?.data?.data?.cards;
         setAllRestaurant(restaurantList);
