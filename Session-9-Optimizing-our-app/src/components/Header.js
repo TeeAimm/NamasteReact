@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Title = () => (
-  <a href="/">
+  <Link to='/'>
     <img
       className="logo"
       alt="Food-Dom logo"
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbp0OxXzrRkjDtK3Ge6X6goSmhJL1MoDmXKg&usqp=CAU"
     />
-  </a>
+  </Link>
 );
 
 export const Header = () => {
