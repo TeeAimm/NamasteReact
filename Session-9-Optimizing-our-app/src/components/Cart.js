@@ -1,6 +1,6 @@
 const Cart = () => {
     return <>
-        <h1>Cart page</h1>
+        <h1>Lazy loaded Cart page</h1>
     </>
 }
 
