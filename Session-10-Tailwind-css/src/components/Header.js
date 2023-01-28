@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Title = () => (
   <Link to='/'>
     <img
-      className="logo"
+      className="h-28"
       alt="Food-Dom logo"
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbp0OxXzrRkjDtK3Ge6X6goSmhJL1MoDmXKg&usqp=CAU"
     />

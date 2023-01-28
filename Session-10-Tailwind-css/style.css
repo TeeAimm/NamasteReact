@@ -1,10 +1,12 @@
-#root {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* #root {
   background: #fbfbd6;
 }
 .header {
   display: flex;
   justify-content: space-between;
-  /* border: 1px solid black; */
   background: #77b141;
   align-items: center;
 }
@@ -57,7 +59,6 @@
 }
 .menu-item > .img >img {
   width: 118px;
-  /* height: 96px; */
 }
 .menu-item {
   display: flex;
@@ -94,3 +95,4 @@
   margin: 20px 0;
   align-items: center;
 }
+ */
