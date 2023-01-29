@@ -28,24 +28,25 @@ const Body = () => {
    
     return (!isOnline) ? <h1>You're offline..Please check internet connection! 🛑</h1> : allRestaurants?.length === 0 ? (<Shimmer />) : (
         <>
-            <div className="search-container"> 
+            <div className="mb-4 flex justify-center"> 
                 <input
                     type="text"
                     value={searchInput}
-                    className="search-input"
-                    placeholder="Search"
+                    className="border h-11 px-4  border-gray-300"
+                    placeholder="Search for restaurants"
                     onChange={(e) => { setSearchInput(e.target.value) }}
                 />
-                <button className="search-btn" onClick={() => {
+                <button className="h-11 bg-[#fc8019] px-5 mx-4 hover:scale-x-105" onClick={() => {
                     let filteredList = filterData(searchInput, allRestaurants);
                     setfilteredRestaurants(filteredList)
                 }}>Search</button>
-                <button onClick={() => {
+                <button className="h-11 bg-gray-600 px-5 text-white hover:scale-x-105" onClick={() => {
                     setSearchInput('')
                     setfilteredRestaurants(allRestaurants)
                 }}>Clear</button>
             </div>
-            <div className="restaurant-list-container">
+            <div className="mx-16 text-4xl border-b-[1px] pb-2 border-gray-200 mb-4">{allRestaurants?.length} restaurants</div>
+            <div className="grid grid-cols-4 mx-16">
                 {filteredRestaurants.length === 0 ? <h1>No restaurant found. Try again!!</h1> : filteredRestaurants?.map((restaurant) => {
                     return (
                         <Link to={'restaurant/' + restaurant.data.id} key={restaurant.data.id}>

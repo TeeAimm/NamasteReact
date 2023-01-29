@@ -13,7 +13,6 @@ class Profile extends React.Component {
     async componentDidMount(){
         const userData= await fetch("https://api.github.com/users/TeeAimm");
         const userDataJson = await userData.json();
-        console.log("data-",userDataJson)
         this.setState({
             userInfo: userDataJson,
             count: 0,
