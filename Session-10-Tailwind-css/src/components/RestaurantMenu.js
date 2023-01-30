@@ -32,7 +32,7 @@ const RestaurantMenu = () => {
                             <div className="text-xs opacity-70">Delivery Time</div>
                         </div>
                         <div className="pl-9">
-                            <div className="font-semibold">{restaurant?.costForTwo / 100}</div>
+                            <div className="font-semibold">&#8377; {restaurant?.costForTwo / 100}</div>
                             <div className="text-xs opacity-70">Cost for two</div>
                         </div>
                     </div>
