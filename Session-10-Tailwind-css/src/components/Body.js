@@ -11,7 +11,7 @@ import useOnline from "../utils/useOnline";
 const Body = () => {
     const [allRestaurants, setAllRestaurant] = useState([]);
     const [filteredRestaurants, setfilteredRestaurants] = useState([]);
-    const [searchInput, setSearchInput] = useState('');
+    const [searchInput, setSearchInput] = useState(''); 
     const isOnline = useOnline();
     useEffect(() => {
         getAllRestaurants()
@@ -45,7 +45,7 @@ const Body = () => {
                     setfilteredRestaurants(allRestaurants)
                 }}>Clear</button>
             </div>
-            <div className="mx-16 text-4xl border-b-[1px] pb-2 border-gray-200 mb-4">{allRestaurants?.length} restaurants</div>
+            <div className="mx-16 text-4xl border-b-[1px] pb-2 border-gray-200 mb-4">{filteredRestaurants?.length} restaurants</div>
             <div className="grid grid-cols-4 mx-16">
                 {filteredRestaurants.length === 0 ? <h1>No restaurant found. Try again!!</h1> : filteredRestaurants?.map((restaurant) => {
                     return (
