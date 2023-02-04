@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { BiHomeSmile, BiInfoCircle, BiMailSend, BiCartAlt, BiLogInCircle, BiLogOutCircle } from "react-icons/bi";
+import { BiHomeSmile, BiInfoCircle, BiMailSend, BiCartAlt, BiLogInCircle, BiLogOutCircle, BiShoppingBag } from "react-icons/bi";
+import userContext from "../utils/userContext";
+
 
 const Title = () => (
   <Link to='/'>
@@ -13,10 +15,13 @@ const Title = () => (
 );
 
 export const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const {user} = useContext(userContext)
+
   return (
     <div className="flex justify-between items-center shadow mb-4">
       <Title />
+      {isLoggedIn && <div className="flex">Hello<div className="pl-2">{user?.name}</div> </div>}
       <ul className="flex">
         <li className="px-4 font-semibold hover:text-[#fc8019]">
           <Link to="/" className="flex items-center">
@@ -40,6 +45,12 @@ export const Header = () => {
           <Link to="cart" className="flex items-center">
             <span><BiCartAlt /></span>
             <span className="pl-1">Cart</span>
+          </Link>
+        </li>
+        <li className="px-4 font-semibold hover:text-[#fc8019]">
+          <Link to="instamart" className="flex items-center">
+            <span><BiShoppingBag /></span>
+            <span className="pl-1">Instamart</span>
           </Link>
         </li>
         <li className="px-4 font-semibold hover:text-[#fc8019]">
