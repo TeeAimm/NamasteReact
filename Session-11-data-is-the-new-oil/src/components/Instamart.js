@@ -1,31 +1,33 @@
 import { useState } from "react"
-import { LOREM_IPSUM_TEXT } from "../constants"
+import { LOREM_IPSUM_TEXT } from "../constants";
+import { RxChevronUp, RxChevronDown } from "react-icons/rx";
 
 const Section = ({ title, description, isVisible, setIsVisible }) => {
-    return <div className="border p-4 my-5">
-        <h2 className="font-bold">{title}</h2>
+    return <div className="border">
         {isVisible ?
             <button
                 type="button"
-                className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                className="w-full flex items-center justify-between bg-gray-600 text-white p-4 text-lg"
                 onClick={() => {
                     setIsVisible(false)
-                }}>Hide</button> :
+                }}><h2 className="font-bold">{title}</h2><RxChevronUp className="text-2xl" />
+            </button> :
             <button
                 type="button"
-                className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                className="w-full flex items-center justify-between bg-gray-600 text-white p-4 text-lg"
                 onClick={() => {
                     setIsVisible(true)
-                }}>Show</button>
+                }}><h2 className="font-bold">{title}</h2><RxChevronDown className="text-2xl" />
+            </button>
         }
-        {isVisible && <p className="transition-all">{description}</p>}
+        {isVisible && <p className="p-4">{description}</p>}
     </div>
 }
 
 const Instamart = () => {
     const [visibleSection, setIsVisibleSection] = useState('about')
     return <div className="mx-16">
-        <h1 className="text-4xl">Instamart</h1>
+        <h1 className="text-4xl mb-4">Instamart</h1>
         <Section
             title={"About Instamart"}
             description={LOREM_IPSUM_TEXT}
