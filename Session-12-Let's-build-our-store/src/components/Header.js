@@ -5,6 +5,7 @@ import { IoIosHelpBuoy } from "react-icons/io";
 import userContext from "../utils/userContext";
 import useOnline from "../utils/useOnline";
 import { RiEmotionLine, RiWifiOffLine } from "react-icons/ri";
+import { useSelector } from "react-redux";
 
 
 const Title = () => (
@@ -21,6 +22,7 @@ export const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { user } = useContext(userContext);
   const isOnline = useOnline();
+  const cartItems = useSelector(store => store.cart.items)
   const onlineIcon = isOnline ? <RiEmotionLine className="text-green-600" /> : <RiWifiOffLine />
 
   return (
@@ -55,7 +57,7 @@ export const Header = () => {
         <li className="px-4 font-semibold hover:text-[#fc8019]">
           <Link to="cart" className="flex items-center">
             <span><BiCartAlt /></span>
-            <span className="pl-1">Cart</span>
+            <span className="pl-1">Cart - {cartItems.length}</span>
           </Link>
         </li>
         <li className="px-4 font-semibold hover:text-[#fc8019]">
