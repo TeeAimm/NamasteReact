@@ -11,8 +11,8 @@ export const LOREM_IPSUM_TEXT = "On the other hand, we denounce with righteous i
 export const FAQ_LIST = [
   {
       q_id:'q1',
-      question: 'What is Swiggy Customer Care Number?',
-      answer: 'Please search for your issue in the help section on this page and initiate a chat with us. A customer care executive will be assigned to you shortly. You can also email us your issue on support@swiggy.in'
+      question: 'What is FoodDom Customer Care Number?',
+      answer: 'Please search for your issue in the help section on this page and initiate a chat with us. A customer care executive will be assigned to you shortly. You can also email us your issue on support@fooddom.in'
   },
   {
       q_id:'q2',
@@ -47,7 +47,7 @@ export const FAQ_LIST = [
   {
       q_id:'q8',
       question: 'Deactivate my account',
-      answer: 'Please write to us at support@swiggy.in in the event that you want to deactivate your account.'
+      answer: 'Please write to us at support@fooddom.in in the event that you want to deactivate your account.'
   }
 ]
 
