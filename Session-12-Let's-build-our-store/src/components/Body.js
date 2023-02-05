@@ -28,7 +28,7 @@ const Body = () => {
    
     return (!isOnline) ? <h1>You're offline..Please check internet connection! 🛑</h1> : allRestaurants?.length === 0 ? (<Shimmer />) : (
         <>
-            <div className="mb-4 flex justify-center"> 
+            <div className="my-4 flex justify-center"> 
                 <input
                     type="text"
                     value={searchInput}

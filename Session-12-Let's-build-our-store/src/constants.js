@@ -8,6 +8,49 @@ export const FETCH_URL = {
 
 export const LOREM_IPSUM_TEXT = "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
 
+export const FAQ_LIST = [
+  {
+      q_id:'q1',
+      question: 'What is Swiggy Customer Care Number?',
+      answer: 'Please search for your issue in the help section on this page and initiate a chat with us. A customer care executive will be assigned to you shortly. You can also email us your issue on support@swiggy.in'
+  },
+  {
+      q_id:'q2',
+      question: 'Can I edit my order?',
+      answer: 'Your order can be edited before it reaches the restaurant. You could contact customer support team via chat or call to do so. Once order is placed and restaurant starts preparing your food, you may not edit its contents'
+  },
+  {
+      q_id:'q3',
+      question: 'I want to cancel my order',
+      answer: 'We will do our best to accommodate your request if the order is not placed to the restaurant (Customer service number:  xxx-xxxxxxxx). Please note that we will have a right to charge a cancellation fee up to full order value to compensate our restaurant and delivery partners if your order has been confirmed.'
+  },
+  {
+      q_id:'q4',
+      question: 'Is there a minimum order value?',
+      answer: 'We have no minimum order value and you can order for any amount.'
+  },
+  {
+      q_id:'q5',
+      question: 'Do you charge for delivery?',
+      answer: 'Delivery fee varies from city to city and is applicable if order value is below a certain amount. Additionally, certain restaurants might have fixed delivery fees.'
+  },
+  {
+      q_id:'q6',
+      question: 'What are your delivery hours?',
+      answer: 'Our delivery hours vary for different locations and depends on availability of supply from restaurant partners.'
+  },
+  {
+      q_id:'q7',
+      question: 'Is single order from many restaurants possible?',
+      answer: 'We currently do not support this functionality. However, you can place orders for individual items from different restaurants.'
+  },
+  {
+      q_id:'q8',
+      question: 'Deactivate my account',
+      answer: 'Please write to us at support@swiggy.in in the event that you want to deactivate your account.'
+  }
+]
+
 export const Restaurant_Data = [
   {
     type: "restaurant",

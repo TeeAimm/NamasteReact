@@ -1,7 +1,10 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { BiHomeSmile, BiInfoCircle, BiMailSend, BiCartAlt, BiLogInCircle, BiLogOutCircle, BiShoppingBag } from "react-icons/bi";
+import { IoIosHelpBuoy } from "react-icons/io";
 import userContext from "../utils/userContext";
+import useOnline from "../utils/useOnline";
+import { RiEmotionLine, RiWifiOffLine } from "react-icons/ri";
 
 
 const Title = () => (
@@ -16,12 +19,14 @@ const Title = () => (
 
 export const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const {user} = useContext(userContext)
+  const { user } = useContext(userContext);
+  const isOnline = useOnline();
+  const onlineIcon = isOnline ? <RiEmotionLine className="text-green-600" /> : <RiWifiOffLine />
 
   return (
-    <div className="flex justify-between items-center shadow mb-4">
+    <div className="flex justify-between items-center shadow">
       <Title />
-      {isLoggedIn && <div className="flex">Hello<div className="pl-2">{user?.name}</div> </div>}
+      {isLoggedIn ? <div className="flex items-center">{onlineIcon}&nbsp;&nbsp;Hello<div className="pl-2">{user?.name}</div></div> : <div>Please login!!</div>}
       <ul className="flex">
         <li className="px-4 font-semibold hover:text-[#fc8019]">
           <Link to="/" className="flex items-center">
@@ -35,10 +40,16 @@ export const Header = () => {
             <span className="pl-1">About</span>
           </Link>
         </li>
-        <li className="px-4 font-semibold hover:text-[#fc8019]">
+        {/* <li className="px-4 font-semibold hover:text-[#fc8019]">
           <Link to="contact" className="flex items-center">
             <span><BiMailSend /></span>
             <span className="pl-1">Contact</span>
+          </Link>
+        </li> */}
+        <li className="px-4 font-semibold hover:text-[#fc8019]">
+          <Link to="instamart" className="flex items-center">
+            <span><BiShoppingBag /></span>
+            <span className="pl-1">Instamart</span>
           </Link>
         </li>
         <li className="px-4 font-semibold hover:text-[#fc8019]">
@@ -48,9 +59,9 @@ export const Header = () => {
           </Link>
         </li>
         <li className="px-4 font-semibold hover:text-[#fc8019]">
-          <Link to="instamart" className="flex items-center">
-            <span><BiShoppingBag /></span>
-            <span className="pl-1">Instamart</span>
+          <Link to="help" className="flex items-center">
+            <span><IoIosHelpBuoy /></span>
+            <span className="pl-1">Help</span>
           </Link>
         </li>
         <li className="px-4 font-semibold hover:text-[#fc8019]">
