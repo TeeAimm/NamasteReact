@@ -6,13 +6,19 @@ import Shimmer from "./Shimmer";
 import { AiFillStar } from "react-icons/ai";
 import { TbDiscount2 } from "react-icons/tb";
 
+import { useEffect } from "react";
+import ConfirmModal from "./ConfirmModal";
+import { useSelector } from "react-redux";
+
 const RestaurantMenu = () => {
     const { resId } = useParams();
     const restaurant = useRestaurant(resId);
-    
+    const cartItems = useSelector(store=> store.cart.items)
 
     return !restaurant ? <Shimmer /> : (
         <>
+            {console.log('r1', restaurant)}
+            {/* <ConfirmModal /> */}
             <div className="flex bg-[#171a29] text-white py-10 px-20">
                 <img className="h-40" src={IMG_CDN_URL + restaurant?.cloudinaryImageId} />
                 <div className="px-14">

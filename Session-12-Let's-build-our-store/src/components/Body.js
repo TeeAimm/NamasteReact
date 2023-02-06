@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import {filterData} from "../utils/helper"
-import useAllRestaurant from "../utils/useAllRestaurant";
 import { FETCH_URL } from "../constants";
 import useOnline from "../utils/useOnline";
 

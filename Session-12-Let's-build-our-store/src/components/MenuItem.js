@@ -1,16 +1,23 @@
 import { IMG_CDN_URL } from "../constants";
 import { BiCheckboxSquare, BiCaretUpSquare } from "react-icons/bi";
 import { useDispatch } from "react-redux";
-import {addItem} from '../utils/cartSlice'
+import { addItem, clearItem, setRestaurantDetails } from '../utils/cartSlice'
+import { useState } from "react";
 
 const MenuItem = ({ id, name, defaultPrice, price, description, cloudinaryImageId, isVeg }) => {
     const actualPrice = defaultPrice || price;
+    const [isAdd, setIsAdd] = useState(true);
     const dispatch = useDispatch();
     const handleAddItem = (itemObj) => {
-        dispatch(addItem(itemObj))
+        dispatch(addItem(itemObj));
+        setIsAdd(false)
+    }
+    const handleRemoveItem = (id) => {
+        dispatch(clearItem(id))
+        setIsAdd(true)
     }
     return (
-        <div className="grid grid-cols-4">
+        cloudinaryImageId && <div className="grid grid-cols-4">
             <div className="col-start-2 col-end-4">
                 <div className="flex justify-between border-b pt-6 pb-9 items-center">
                     <div>
@@ -21,7 +28,10 @@ const MenuItem = ({ id, name, defaultPrice, price, description, cloudinaryImageI
                     </div>
                     <div className="h-[120px] min-w-118 max-w-118 ml-3 relative">
                         <img className="h-full w-full rounded-md" src={IMG_CDN_URL + cloudinaryImageId} />
-                        <button className="text-[#60b246] border text-xs font-bold py-2 px-8 absolute left-2/4 -bottom-2 -translate-x-1/2 bg-white" onClick={() => { handleAddItem({ id, name, defaultPrice, price, cloudinaryImageId, isVeg }) }}>ADD</button>
+                        {isAdd ? 
+                            <button className="text-[#60b246] border text-xs font-bold py-2 px-8 absolute left-2/4 -bottom-2 -translate-x-1/2 bg-white hover:scale-x-105" onClick={() => { handleAddItem({ id, name, defaultPrice, price, cloudinaryImageId, isVeg }) }}>ADD</button> : 
+                            <button className="text-[#60b246] border text-xs font-bold py-2 px-5 absolute left-2/4 -bottom-2 -translate-x-1/2 bg-white hover:scale-x-105" onClick={() => { handleRemoveItem(id) }}>REMOVE</button>
+                        }
                     </div>
                 </div>
             </div>
