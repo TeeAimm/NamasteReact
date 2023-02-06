@@ -6,7 +6,7 @@ import Shimmer from "./Shimmer";
 import { AiFillStar } from "react-icons/ai";
 import { TbDiscount2 } from "react-icons/tb";
 
-import { useEffect } from "react";
+import { useState } from "react";
 import ConfirmModal from "./ConfirmModal";
 import { useSelector } from "react-redux";
 
@@ -14,11 +14,17 @@ const RestaurantMenu = () => {
     const { resId } = useParams();
     const restaurant = useRestaurant(resId);
     const cartItems = useSelector(store=> store.cart.items)
+    const [isModalOn,setIsModalOn] = useState(false);
+    const isDiffRestaurant = (dataFromChild) => {
+        setIsModalOn(dataFromChild)
+    }
+    const keepModalOpen = (dataFromChild) => {
+        setIsModalOn(dataFromChild)
+    }
 
-    return !restaurant ? <Shimmer /> : (
+    return !restaurant ? <Shimmer/> : (
         <>
-            {console.log('r1', restaurant)}
-            {/* <ConfirmModal /> */}
+            {isModalOn && <ConfirmModal  handleCloseModal={keepModalOpen}/>}
             <div className="flex bg-[#171a29] text-white py-10 px-20">
                 <img className="h-40" src={IMG_CDN_URL + restaurant?.cloudinaryImageId} />
                 <div className="px-14">
@@ -56,7 +62,7 @@ const RestaurantMenu = () => {
             <div className="mt-10">
                 {(Object.values(restaurant?.menu?.items)).map((item) => {
                     return (
-                        <MenuItem {...item} key={item.id} />
+                        <MenuItem {...item} key={item.id} resDetail={{rName:restaurant?.name,rArea:restaurant?.area,rImage:restaurant?.cloudinaryImageId, rId: restaurant?.id}} handleIsModalOn={isDiffRestaurant}/>
                     )
                 })}
             </div>

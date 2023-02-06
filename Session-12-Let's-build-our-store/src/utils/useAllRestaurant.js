@@ -7,7 +7,6 @@ const useAllRestaurant = () => {
 
     useEffect(() => {
         getAllRestaurants()
-        console.log("use effect")
     }, [])
     async function getAllRestaurants() {
         const data = await fetch(FETCH_URL.GET_ALL_RESTAURANT);

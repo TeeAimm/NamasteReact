@@ -25,16 +25,15 @@ const Cart = () => {
             <div className="col-span-2 bg-white p-8">
                 <div className="flex mb-8">
                     <div>
-                        <img alt="restaurent image" className="h-20 w-20" src={IMG_CDN_URL + restaurantDetail?.resImage} />
+                        <img alt="restaurent image" className="h-20 w-20" src={IMG_CDN_URL + restaurantDetail?.rImage} />
                     </div>
                     <div className="ml-4 border-b-2 border-black">
-                        <div className="pt-2 text-[17px] text-[#282c3f] font-medium">{restaurantDetail?.resName}</div>
-                        <div className="text-[#686b78] text-sm">{restaurantDetail?.resArea}</div>
+                        <div className="pt-2 text-[17px] text-[#282c3f] font-medium">{restaurantDetail?.rName}</div>
+                        <div className="text-[#686b78] text-sm">{restaurantDetail?.rArea}</div>
                     </div>
                     <button className="h-11 bg-gray-600 px-4 text-white hover:scale-x-105 ml-auto" onClick={() => handleRemoveAll()}>Remove All</button>
                 </div>
                 <div className="mx-8">
-                    {console.log("c", cartItems)}
                     {cartItems?.map((item) => {
                         return (
                             <div key={item?.id} className="flex items-center pb-2">

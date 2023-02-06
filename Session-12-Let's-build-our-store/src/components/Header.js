@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { BiHomeSmile, BiInfoCircle, BiMailSend, BiCartAlt, BiLogInCircle, BiLogOutCircle, BiShoppingBag } from "react-icons/bi";
+import { BiHomeSmile, BiInfoCircle, BiCartAlt, BiLogInCircle, BiLogOutCircle, BiShoppingBag } from "react-icons/bi";
 import { IoIosHelpBuoy } from "react-icons/io";
 import userContext from "../utils/userContext";
 import useOnline from "../utils/useOnline";
@@ -55,15 +55,15 @@ export const Header = () => {
           </Link>
         </li>
         <li className="px-4 font-semibold hover:text-[#fc8019]">
-          <Link to="cart" className="flex items-center">
-            <span><BiCartAlt /></span>
-            <span className="pl-1">Cart - {cartItems.length}</span>
-          </Link>
-        </li>
-        <li className="px-4 font-semibold hover:text-[#fc8019]">
           <Link to="help" className="flex items-center">
             <span><IoIosHelpBuoy /></span>
             <span className="pl-1">Help</span>
+          </Link>
+        </li>
+        <li className="px-4 font-semibold hover:text-[#fc8019]">
+          <Link to="cart" className="flex items-center">
+            <span><BiCartAlt /></span>
+            <span className="pl-1">Cart - {cartItems?.length}</span>
           </Link>
         </li>
         <li className="px-4 font-semibold hover:text-[#fc8019]">
