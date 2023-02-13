@@ -6,35 +6,37 @@ import { useSelector } from 'react-redux';
 
 const Sidebar = () => {
     const isMenuOpen = useSelector(store => store.app.isMenuOpen)
-    if (!isMenuOpen) return null
+
+    //^ Early return
+    //if (!isMenuOpen) return null
     return (
-        <div className='border col-span-2 p-3'>
+        <div className={`border ${isMenuOpen ? 'col-span-2' : 'col-span-1'}  p-3`}>
             <ul className='border-b pb-2'>
-                <li className='flex px-3 py-2 items-center cursor-pointer hover:bg-gray-100'>
+                <li className={`${isMenuOpen ? 'flex-row px-3' : 'flex-col'} flex items-center py-2 cursor-pointer hover:bg-gray-100`}>
                     <BiHomeAlt className='text-xl' />
-                    <span className='ml-5'>Home</span>
+                    <span className={`${isMenuOpen ? 'ml-5' : 'text-[10px]'}`}>Home</span>
                 </li>
-                <li className='flex px-3 py-2 items-center cursor-pointer hover:bg-gray-100'>
+                <li className={`${isMenuOpen ? 'flex-row px-3' : 'flex-col'} flex items-center py-2 cursor-pointer hover:bg-gray-100`}>
                     <AiOutlineThunderbolt className='text-xl' />
-                    <span className='ml-5'>Shorts</span>
+                    <span className={`${isMenuOpen ? 'ml-5' : 'text-[10px]'}`}>Shorts</span>
                 </li>
-                <li className='flex px-3 py-2 items-center cursor-pointer hover:bg-gray-100'>
+                <li className={`${isMenuOpen ? 'flex-row px-3' : 'flex-col'} flex items-center py-2 cursor-pointer hover:bg-gray-100`}>
                     <MdOutlineSubscriptions className='text-xl' />
-                    <span className='ml-5'>Subcriptions</span>
+                    <span className={`${isMenuOpen ? 'ml-5' : 'text-[10px]'}`}>Subcriptions</span>
                 </li>
             </ul>
             <ul className='border-b py-2'>
-                <li className='flex px-3 py-2 items-center cursor-pointer hover:bg-gray-100'>
+            <li className={`${isMenuOpen ? 'flex-row px-3' : 'flex-col'} flex items-center py-2 cursor-pointer hover:bg-gray-100`}>
                     <BiHomeAlt className='text-xl' />
-                    <span className='ml-5'>Home</span>
+                    <span className={`${isMenuOpen ? 'ml-5' : 'text-[10px]'}`}>Home</span>
                 </li>
-                <li className='flex px-3 py-2 items-center cursor-pointer hover:bg-gray-100'>
+                <li className={`${isMenuOpen ? 'flex-row px-3' : 'flex-col'} flex items-center py-2 cursor-pointer hover:bg-gray-100`}>
                     <AiOutlineThunderbolt className='text-xl' />
-                    <span className='ml-5'>Shorts</span>
+                    <span className={`${isMenuOpen ? 'ml-5' : 'text-[10px]'}`}>Shorts</span>
                 </li>
-                <li className='flex px-3 py-2 items-center cursor-pointer hover:bg-gray-100'>
+                <li className={`${isMenuOpen ? 'flex-row px-3' : 'flex-col'} flex items-center py-2 cursor-pointer hover:bg-gray-100`}>
                     <MdOutlineSubscriptions className='text-xl' />
-                    <span className='ml-5'>Subcriptions</span>
+                    <span className={`${isMenuOpen ? 'ml-5' : 'text-[10px]'}`}>Subcriptions</span>
                 </li>
             </ul>
         </div>
