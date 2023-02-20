@@ -1,3 +1,9 @@
+const GOOGLE_API_KEY = "AIzaSyCawnN5rhKBvuY5YbViRAlVRyy-Uipz7Mw";
+const YOUTUBE_MULTIPLE_VIDEO = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=Ks-_Mh1QhMc%2Cc0KYU2j0TM4%2CeIho2S0ZahI&key="
+const YOUTUBE_MOST_LIKED_VIDEO = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&key="
+export const YOUTUBE_VIDEOS_API = YOUTUBE_MOST_LIKED_VIDEO + GOOGLE_API_KEY
+
+
 export const List = [
     {
         id: 1,
@@ -27,32 +33,32 @@ export const List = [
         id: 7,
         name: 'Angular'
     },
-   /* {
-        id: 8,
-        name: 'News'
-    },
-    {
-        id: 9,
-        name: 'K-drama'
-    },
-    {
-        id: 10,
-        name: 'Foundation'
-    },
-    {
-        id: 11,
-        name: 'Computer Programming'
-    },
-    {
-        id: 12,
-        name: 'Playlist'
-    },
-    {
-        id: 13,
-        name: 'Live'
-    },
-    {
-        id: 14,
-        name: 'Spice'
-    } */
+    /* {
+         id: 8,
+         name: 'News'
+     },
+     {
+         id: 9,
+         name: 'K-drama'
+     },
+     {
+         id: 10,
+         name: 'Foundation'
+     },
+     {
+         id: 11,
+         name: 'Computer Programming'
+     },
+     {
+         id: 12,
+         name: 'Playlist'
+     },
+     {
+         id: 13,
+         name: 'Live'
+     },
+     {
+         id: 14,
+         name: 'Spice'
+     } */
 ]
