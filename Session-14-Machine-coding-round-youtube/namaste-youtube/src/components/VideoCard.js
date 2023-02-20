@@ -1,19 +1,19 @@
 import React from 'react'
 
 const VideoCard = ({ info }) => {
-    console.log(info)
+    /* console.log(info) */
     const { snippet, statistics } = info || {};
     const { channelTitle, title, thumbnails } = snippet || {}
     return (
-        <div className='col-span-3'>
+        <div >
             <div>
                 {/* Show channel icon here */}
             </div>
             <div>
                 <img className='rounded-lg' alt='thumbnail' src={thumbnails?.medium?.url} />
-                <div>{title}</div>
-                <div>{channelTitle}</div>
-                <div>{statistics?.viewCount}</div>
+                <div className='text-sm font-semibold pt-3 pb-2'>{title}</div>
+                <div className='text-xs text-[#606060] pb-1'>{channelTitle}</div>
+                <div className='text-xs text-[#606060]'>{statistics?.viewCount} views</div>
             </div>
         </div>
     )

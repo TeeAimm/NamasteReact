@@ -4,7 +4,7 @@ import { List } from '../assets/constants'
 
 const ButtonList = () => {
     return (
-        <div className='flex'>
+        <div className='flex mb-4'>
             {List.map((item) => {
                 return <Button key={item.id} name={item.name} />
             })}

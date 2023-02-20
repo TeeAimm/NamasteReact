@@ -14,7 +14,7 @@ const Head = () => {
         <div className='flex justify-between items-center px-4'>
             <div className='flex items-center'>
                 <RxHamburgerMenu className='text-2xl cursor-pointer' onClick={() => handleToggleMenu()} />
-                <img className='w-32' alt="YouTube Home" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK0joG-qM5mvn1XZ-udwSlceKM8eVlj68x0A&usqp=CAU" />
+                <a href="/"><img className='w-32' alt="YouTube Home" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK0joG-qM5mvn1XZ-udwSlceKM8eVlj68x0A&usqp=CAU" /></a>
             </div>
             <div className='flex w-[728px] mr-11'>
                 <input className='border-gray-300 border px-3 w-[540px] rounded-l-full' placeholder='Search' type="text" />

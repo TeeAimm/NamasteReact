@@ -1,5 +1,5 @@
 import React from 'react'
-import MainContainer from './MainContainer'
+import { Outlet } from 'react-router-dom'
 import Sidebar from './Sidebar'
 
 const Body = () => {
@@ -7,7 +7,7 @@ const Body = () => {
         <div>
             <div className='grid grid-cols-12 gap-4'>
                 <Sidebar />
-                <MainContainer />
+                <Outlet />
             </div>
         </div>
     )
