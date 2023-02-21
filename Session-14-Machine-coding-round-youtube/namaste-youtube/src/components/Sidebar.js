@@ -10,7 +10,10 @@ const Sidebar = () => {
     const isWatchPageOpen = useSelector(store => store.app.isWatchPageOpen)
 
     //^ Early return
-    if (isWatchPageOpen) return null
+    if (isWatchPageOpen && !isMenuOpen) {
+        return null
+    }
+
     return (
         <div className={`border ${isMenuOpen ? 'col-span-2' : 'col-span-1'}  p-3`}>
             <ul className='border-b pb-2'>

@@ -12,6 +12,7 @@ const appSlice = createSlice({
         },
         onWatchPage: (state) => {
             state.isWatchPageOpen = true
+            state.isMenuOpen = false
         },
         notOnWatchPage: (state) => {
             state.isWatchPageOpen = false
