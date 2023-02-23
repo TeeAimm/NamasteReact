@@ -26,7 +26,7 @@ const Head = () => {
         console.log(searchQuery, json[1])
     }
     return (
-        <div className='flex justify-between items-center px-4'>
+        <div className='sticky top-0 bg-white flex justify-between items-center px-4'>
             <div className='flex items-center'>
                 <RxHamburgerMenu className='text-2xl cursor-pointer' onClick={() => handleToggleMenu()} />
                 <a href="/"><img className='w-32' alt="YouTube Home" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK0joG-qM5mvn1XZ-udwSlceKM8eVlj68x0A&usqp=CAU" /></a>
@@ -47,8 +47,12 @@ const Head = () => {
                 {suggestions?.length !==0 && <div className='fixed border bg-white shadow-lg rounded-xl w-[540px]'>
                     <ul className='py-4'>
                         {suggestions?.map((item) => {
-                            return <li key={item} className='px-4 flex items-center'>
-                                <TfiSearch /><div className='pl-4'>{item}</div>
+                            return <li key={item} className='px-4 pb-2 flex items-center'>
+                                <TfiSearch />
+                                <div className='pl-4'>
+                                    {item.slice(0,searchQuery?.length)}
+                                    <span className='font-semibold'>{item.slice(searchQuery?.length)}</span>
+                                </div>
                             </li>
                         })}
                     </ul>
