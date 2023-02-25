@@ -47,7 +47,7 @@ const Head = () => {
                 {suggestions?.length !==0 && <div className='fixed border bg-white shadow-lg rounded-xl w-[540px]'>
                     <ul className='py-4'>
                         {suggestions?.map((item) => {
-                            return <li key={item} className='px-4 pb-2 flex items-center'>
+                            return <li key={item} className='px-4 py-1 flex items-center hover:bg-gray-200'>
                                 <TfiSearch />
                                 <div className='pl-4'>
                                     {item.slice(0,searchQuery?.length)}
