@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useSearchParams } from 'react-router-dom'
+import { useLocation, useSearchParams } from 'react-router-dom'
 import { onWatchPage, notOnWatchPage } from '../utils/appSlice'
 import CommentsContainer from './CommentsContainer'
 
 const WatchPage = () => {
+    const {state} = useLocation();
     const [searchParams] = useSearchParams()
     const isMenuOpen = useSelector(store => store.app.isMenuOpen)
     const dispatch = useDispatch()
@@ -14,6 +15,7 @@ const WatchPage = () => {
             dispatch(notOnWatchPage())
         }
     }, [])
+   console.log("state", state)
     return (
         <>
             <div className={`${isMenuOpen ? 'col-span-6' : 'col-span-7 pl-12'} border `}>
@@ -21,7 +23,7 @@ const WatchPage = () => {
                     className='relative w-full h-[409px]'
                     src={"https://www.youtube.com/embed/" + searchParams.get('v')}
                     title="YouTube video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen></iframe>
 

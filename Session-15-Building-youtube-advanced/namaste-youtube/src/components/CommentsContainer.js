@@ -18,12 +18,12 @@ const Comment = ({ data }) => {
 const CommentList = ({ comments }) => {
     return <>
         {comments.map((item) => {
-            return <>
-                <Comment key={item.id} data={item} />
+            return <div key={item.id}>
+                <Comment data={item} />
                 <div className='ml-5 border-l pl-5'>
-                    <CommentList comments={item.replies}/>
+                    <CommentList key={item.id} comments={item.replies}/>
                 </div>
-            </>
+            </div>
         })}
     </>
 }
