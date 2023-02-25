@@ -4,6 +4,97 @@ const YOUTUBE_MOST_LIKED_VIDEO = "https://youtube.googleapis.com/youtube/v3/vide
 export const YOUTUBE_VIDEOS_API = YOUTUBE_MOST_LIKED_VIDEO + GOOGLE_API_KEY
 export const YOUTUBE_SEARCH_SUGGESTION_API = "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
 
+export const CommentData = [
+    {
+        id: 'c1',
+        name: 'Tania Mollah',
+        comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        replies: [
+            {
+                id: 'c1_1',
+                name: 'Tania Mollah',
+                comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                replies: [
+                    {
+                        id: 'c1_1',
+                        name: 'Tania Mollah',
+                        comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                        replies: [
+                            {
+                                id: 'c1_1',
+                                name: 'Tania Mollah',
+                                comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                                replies: []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 'c2',
+        name: 'Tania Mollah',
+        comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        replies: [
+            {
+                id: 'c2_1',
+                name: 'Tania Mollah',
+                comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                replies: []
+            }
+        ]
+    },
+    {
+        id: 'c3',
+        name: 'Tania Mollah',
+        comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        replies: [
+            {
+                id: 'c3_1',
+                name: 'Tania Mollah',
+                comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                replies: []
+            },
+            {
+                id: 'c3_2',
+                name: 'Tania Mollah',
+                comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                replies: []
+            }
+        ]
+    },
+    {
+        id: 'c4',
+        name: 'Tania Mollah',
+        comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        replies: []
+    },
+    {
+        id: 'c5',
+        name: 'Tania Mollah',
+        comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        replies: []
+    },
+    {
+        id: 'c6',
+        name: 'Tania Mollah',
+        comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        replies: []
+    },
+    {
+        id: 'c7',
+        name: 'Tania Mollah',
+        comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        replies: []
+    },
+    {
+        id: 'c8',
+        name: 'Tania Mollah',
+        comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        replies: []
+    },
+]
 
 export const List = [
     {

@@ -12,8 +12,8 @@ const VideoContainer = () => {
     const getVideos = async () => {
         const data = await fetch(YOUTUBE_VIDEOS_API);
         const json = await data.json()
+        console.log("videos", json?.items)
         setVideos(json?.items)
-
     }
     return videos?.length === 0 ? <Shimmer /> : (
         <div className='grid grid-cols-12 gap-4'>
