@@ -3,7 +3,7 @@ const YOUTUBE_MULTIPLE_VIDEO = "https://youtube.googleapis.com/youtube/v3/videos
 const YOUTUBE_MOST_LIKED_VIDEO = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key="
 export const YOUTUBE_VIDEOS_API = YOUTUBE_MOST_LIKED_VIDEO + GOOGLE_API_KEY
 export const YOUTUBE_SEARCH_SUGGESTION_API = "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
-
+export const GET_SEARCH_RESULT_API = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&key=" + GOOGLE_API_KEY + '&q='
 export const CommentData = [
     {
         id: 'c1',
