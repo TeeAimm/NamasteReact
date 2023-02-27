@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleMenu } from '../utils/appSlice';
 import { GET_SEARCH_RESULT_API, YOUTUBE_SEARCH_SUGGESTION_API } from '../assets/constants';
 import { cacheSuggestion } from '../utils/SearchSlice';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 
 const Head = () => {
     const [searchQuery, setSearchQuery] = useState("")
@@ -14,7 +14,7 @@ const Head = () => {
     const [showSuggestions, setShowSuggestions] = useState(false)
     const cacheResult = useSelector(store => store.search)
     const dispatch = useDispatch()
-    const navigate = useNavigate()
+    //const navigate = useNavigate()
     const handleToggleMenu = () => {
         dispatch(toggleMenu())
     }
