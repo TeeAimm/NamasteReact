@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaUserAlt } from "react-icons/fa";
 import { TfiSearch } from "react-icons/tfi";
@@ -6,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleMenu } from '../utils/appSlice';
 import { GET_SEARCH_RESULT_API, YOUTUBE_SEARCH_SUGGESTION_API } from '../assets/constants';
 import { cacheSuggestion } from '../utils/SearchSlice';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Head = () => {
     const [searchQuery, setSearchQuery] = useState("")
@@ -14,7 +15,7 @@ const Head = () => {
     const [showSuggestions, setShowSuggestions] = useState(false)
     const cacheResult = useSelector(store => store.search)
     const dispatch = useDispatch()
-    //const navigate = useNavigate()
+    const navigate = useNavigate()
     const handleToggleMenu = () => {
         dispatch(toggleMenu())
     }
@@ -35,21 +36,21 @@ const Head = () => {
         const json = await data.json()
         setSuggestions(json[1])
         dispatch(cacheSuggestion({
-            [searchQuery] : json[1]
+            [searchQuery]: json[1]
         }))
     }
     const handleSearch = async (key) => {
-        console.log('btn clicked-',key)
-        const data = await fetch(GET_SEARCH_RESULT_API+key)
+        console.log('btn clicked-', key)
+        const data = await fetch(GET_SEARCH_RESULT_API + key)
         const json = await data.json()
-       // navigate('/results')
-        console.log('data-',json)
+        navigate('/results')
+        console.log('data-', json)
     }
     return (
         <div className='sticky top-0 bg-white flex justify-between items-center px-4 z-50'>
             <div className='flex items-center'>
                 <RxHamburgerMenu className='text-2xl cursor-pointer' onClick={() => handleToggleMenu()} />
-                <a href="/"><img className='w-32' alt="YouTube Home" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK0joG-qM5mvn1XZ-udwSlceKM8eVlj68x0A&usqp=CAU" /></a>
+                <Link to="/"><img className='w-32' alt="YouTube Home" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK0joG-qM5mvn1XZ-udwSlceKM8eVlj68x0A&usqp=CAU" /></Link>
             </div>
             <div>
                 <div className='flex w-[728px] mr-11'>
@@ -62,9 +63,9 @@ const Head = () => {
                         onFocus={() => setShowSuggestions(true)}
                         onBlur={() => setShowSuggestions(false)}
                     />
-                    <button 
+                    <button
                         className='py-3 px-5 border border-gray-300 border-l-0 bg-gray-100 rounded-r-full'
-                        onClick={()=>handleSearch(searchQuery)}>
+                        onClick={() => handleSearch(searchQuery)}>
                         <TfiSearch />
                     </button>
                 </div>
