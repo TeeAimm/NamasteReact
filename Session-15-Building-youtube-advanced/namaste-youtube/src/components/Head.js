@@ -4,7 +4,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { FaUserAlt } from "react-icons/fa";
 import { TfiSearch } from "react-icons/tfi";
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleMenu } from '../utils/appSlice';
+import { onYTLogoClick, toggleMenu } from '../utils/appSlice';
 import { GET_SEARCH_RESULT_API, YOUTUBE_SEARCH_SUGGESTION_API } from '../assets/constants';
 import { cacheSuggestion } from '../utils/SearchSlice';
 import { useNavigate } from 'react-router-dom';
@@ -46,11 +46,16 @@ const Head = () => {
         navigate('/results')
         console.log('data-', json)
     }
+    const handleYTLogo = () => {
+        dispatch(onYTLogoClick())
+    }
     return (
         <div className='sticky top-0 bg-white flex justify-between items-center px-4 z-50'>
             <div className='flex items-center'>
                 <RxHamburgerMenu className='text-2xl cursor-pointer' onClick={() => handleToggleMenu()} />
-                <Link to="/"><img className='w-32' alt="YouTube Home" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK0joG-qM5mvn1XZ-udwSlceKM8eVlj68x0A&usqp=CAU" /></Link>
+                <Link to="/" onClick={()=>handleYTLogo()}>
+                    <img className='w-32' alt="YouTube Home" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK0joG-qM5mvn1XZ-udwSlceKM8eVlj68x0A&usqp=CAU" />
+                </Link>
             </div>
             <div>
                 <div className='flex w-[728px] mr-11'>

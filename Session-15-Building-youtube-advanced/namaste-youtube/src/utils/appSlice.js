@@ -16,9 +16,12 @@ const appSlice = createSlice({
         },
         notOnWatchPage: (state) => {
             state.isWatchPageOpen = false
+        },
+        onYTLogoClick: (state) => {
+            state.isMenuOpen = true
         }
     }
 })
 
-export const { toggleMenu, onWatchPage, notOnWatchPage } = appSlice.actions;
+export const { toggleMenu, onWatchPage, notOnWatchPage, onYTLogoClick } = appSlice.actions;
 export default appSlice.reducer;
